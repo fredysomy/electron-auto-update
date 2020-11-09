@@ -20,16 +20,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: electron/electron-quick-start
+          repository: fredysomy/electron-auto-update
           ref: refs/heads/master
-          path: electron-quick-start
+          path: electron-auto-update
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
       - name: Replace electron with electron-nightly
         run: |
-          cd electron-quick-start
+          cd electron-auto-update
           npm uninstall --save-dev electron
           npm install --save-dev electron-nightly@latest
         shell: bash
